@@ -1,0 +1,27 @@
+# src/__init__.py
+"""Text Classification Inference Package"""
+__version__ = "1.0.0"
+
+# src/preprocessing/__init__.py
+"""Text preprocessing module"""
+from .text_processor import TextProcessor
+
+__all__ = ['TextProcessor']
+
+# src/model/__init__.py
+"""Model loading and management module"""
+from .loader import ModelLoader
+
+__all__ = ['ModelLoader']
+
+# src/inference/__init__.py
+"""Inference module"""
+from .predictor import TextClassificationPredictor
+
+__all__ = ['TextClassificationPredictor']
+
+# src/api/__init__.py
+"""API module"""
+from .app import app
+
+__all__ = ['app']

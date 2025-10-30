@@ -1,0 +1,28 @@
+# Model Configuration
+model:
+  package_path: "models/cnn_model_package.pkl"  # Path to your .pkl model package
+  threshold: 0.5  # Decision threshold (can be overridden if in package)
+
+# Preprocessing Configuration
+preprocessing:
+  lowercase: true
+  remove_special_chars: false
+  remove_stopwords: false
+
+# API Configuration
+api:
+  host: "0.0.0.0"
+  port: 8000
+  reload: false
+  workers: 1
+  log_level: "info"
+
+# Inference Configuration
+inference:
+  batch_size: 100
+  confidence_threshold: 0.5
+
+# Logging Configuration
+logging:
+  level: "INFO"
+  file: "logs/inference.log"

@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  text-classifier:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: text-classification-api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ../models:/app/models
+      - ../logs:/app/logs
+      - ../config.yaml:/app/config.yaml
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
